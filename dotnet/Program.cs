@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 
 class Program
 {
@@ -15,12 +14,23 @@ class Program
             initialArray[i] = Console.ReadLine();
         }
 
-        List<string> newArray = new List<string>();
+        int count = 0;
         foreach (string str in initialArray)
         {
             if (str.Length <= 3)
             {
-                newArray.Add(str);
+                count++;
+            }
+        }
+
+        string[] newArray = new string[count];
+        int index = 0;
+        foreach (string str in initialArray)
+        {
+            if (str.Length <= 3)
+            {
+                newArray[index] = str;
+                index++;
             }
         }
 
